@@ -91,7 +91,7 @@ function renderStats() {
   const emails = allResponses.filter(r => r.email).length;
 
   document.getElementById("statTotal").textContent  = total;
-  document.getElementById("statAvg").textContent    = total ? avg + " â˜…" : "â€”";
+  document.getElementById("statAvg").textContent    = total ? avg + " \u2605" : "\u2014";
   document.getElementById("statEvents").textContent = events;
   document.getElementById("statEmails").textContent = emails;
 }
