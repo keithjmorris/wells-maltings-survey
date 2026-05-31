@@ -115,7 +115,7 @@ function renderResponses() {
     const date      = r.submittedAt?.toDate
       ? r.submittedAt.toDate().toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })
       : "â€”";
-    const stars     = "â˜…".repeat(r.rating || 0) + "â˜†".repeat(5 - (r.rating || 0));
+    const stars     = "&#9733;".repeat(r.rating || 0) + "&#9734;".repeat(5 - (r.rating || 0));
 
     const optField  = (label, val) => val
       ? `<div><div class="rc-label">${label}</div><div class="rc-value">${val}</div></div>`
