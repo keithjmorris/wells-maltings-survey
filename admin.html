@@ -45,15 +45,25 @@
 
     <div class="admin-wrap">
 
-      <div class="stat-row" id="statRow">
-        <div class="stat-card"><div class="stat-label">Responses</div><div class="stat-val" id="statTotal">—</div></div>
-        <div class="stat-card"><div class="stat-label">Avg rating</div><div class="stat-val" id="statAvg">—</div></div>
-        <div class="stat-card"><div class="stat-label">Events covered</div><div class="stat-val" id="statEvents">—</div></div>
-        <div class="stat-card"><div class="stat-label">Emails collected</div><div class="stat-val" id="statEmails">—</div></div>
+      <!-- Tab bar -->
+      <div class="admin-tabs">
+        <button class="admin-tab tab-active" id="tabEvents">&#x1F3AD; Events</button>
+        <button class="admin-tab" id="tabCafe">&#x2615; Café</button>
       </div>
 
+      <!-- Stat cards (shared, relabelled per tab) -->
+      <div class="stat-row">
+        <div class="stat-card"><div class="stat-label">Responses</div><div class="stat-val" id="statTotal">—</div></div>
+        <div class="stat-card"><div class="stat-label">Avg rating</div><div class="stat-val" id="statAvg">—</div></div>
+        <div class="stat-card"><div class="stat-label" id="statLabel3">Events covered</div><div class="stat-val" id="statEvents">—</div></div>
+        <div class="stat-card"><div class="stat-label" id="statLabel4">Emails collected</div><div class="stat-val" id="statEmails">—</div></div>
+      </div>
+
+      <!-- Toolbar -->
       <div class="admin-toolbar">
-        <div class="filter-row">
+
+        <!-- Event filters -->
+        <div class="filter-row" id="eventFilters">
           <input type="text" id="filterEvent" placeholder="Filter by event name…">
           <select id="filterRating">
             <option value="">All ratings</option>
@@ -64,6 +74,19 @@
             <option value="1">1 star</option>
           </select>
         </div>
+
+        <!-- Café filters -->
+        <div class="filter-row" id="cafeFilters" style="display:none;">
+          <input type="date" id="filterCafeDate">
+          <select id="filterTimeOfDay">
+            <option value="">All times of day</option>
+            <option>Morning</option>
+            <option>Lunchtime</option>
+            <option>Afternoon</option>
+            <option>Evening</option>
+          </select>
+        </div>
+
         <button class="btn btn-outline" id="csvBtn">&#8595; Download CSV</button>
       </div>
 

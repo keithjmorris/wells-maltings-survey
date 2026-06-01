@@ -356,3 +356,42 @@ textarea { resize: vertical; min-height: 100px; }
   font-size: 15px;
   color: var(--text-hint);
 }
+
+/* â”€â”€ Admin tabs â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.admin-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 1.25rem;
+  border-bottom: 0.5px solid var(--border);
+  padding-bottom: 0;
+}
+
+.admin-tab {
+  padding: 8px 20px;
+  font-size: 15px;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.15s;
+}
+
+.admin-tab:hover    { color: var(--text); }
+.admin-tab.tab-active {
+  color: var(--purple);
+  border-bottom-color: var(--purple);
+}
+
+/* â”€â”€ Time-of-day tag â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.rc-tag {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  background: var(--purple-light);
+  color: var(--purple-dark);
+}

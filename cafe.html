@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wells Maltings — Café Feedback</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page-wrap">
+    <header class="site-header">
+      <div class="logo-mark" aria-hidden="true">WM</div>
+      <div>
+        <div class="site-name">Wells Maltings</div>
+        <div class="site-sub">Café feedback</div>
+      </div>
+    </header>
+
+    <main>
+      <div id="successMsg" class="alert alert-success" style="display:none;">
+        <strong>Thank you!</strong> Your feedback helps us improve the café experience.
+      </div>
+
+      <form id="cafeForm" novalidate>
+
+        <fieldset>
+          <legend>Your visit</legend>
+
+          <div class="form-group">
+            <label>Overall experience <span class="required">*</span></label>
+            <div class="star-row" id="starRow" role="group" aria-label="Rate your overall experience from 1 to 5 stars">
+              <button type="button" class="star" data-value="1" aria-label="1 star — poor">&#9733;</button>
+              <button type="button" class="star" data-value="2" aria-label="2 stars — below average">&#9733;</button>
+              <button type="button" class="star" data-value="3" aria-label="3 stars — average">&#9733;</button>
+              <button type="button" class="star" data-value="4" aria-label="4 stars — good">&#9733;</button>
+              <button type="button" class="star" data-value="5" aria-label="5 stars — excellent">&#9733;</button>
+            </div>
+            <input type="hidden" id="overallRating" value="0">
+          </div>
+
+          <div class="form-group">
+            <label>What did you have?</label>
+            <div class="chip-group" id="hadGroup">
+              <button type="button" class="chip" data-group="had">Coffee &amp; hot drinks</button>
+              <button type="button" class="chip" data-group="had">Cold drinks</button>
+              <button type="button" class="chip" data-group="had">Cake &amp; snacks</button>
+              <button type="button" class="chip" data-group="had">Light lunch</button>
+              <button type="button" class="chip" data-group="had">Full meal</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Did you purchase an alcoholic drink?</label>
+            <div class="chip-group" id="alcoholGroup">
+              <button type="button" class="chip single" data-group="alcohol">Yes</button>
+              <button type="button" class="chip single" data-group="alcohol">No</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>How did you feel about the choice of food and drink?</label>
+            <div class="chip-group" id="choiceGroup">
+              <button type="button" class="chip single" data-group="choice">Excellent variety</button>
+              <button type="button" class="chip single" data-group="choice">Good enough</button>
+              <button type="button" class="chip single" data-group="choice">Could be wider</button>
+              <button type="button" class="chip single" data-group="choice">Too limited</button>
+            </div>
+          </div>
+
+        </fieldset>
+
+        <fieldset>
+          <legend>Ratings</legend>
+
+          <div class="form-group">
+            <label>Food and drink quality</label>
+            <div class="star-row" id="foodStarRow" role="group" aria-label="Rate food and drink quality">
+              <button type="button" class="star" data-value="1" aria-label="1 star">&#9733;</button>
+              <button type="button" class="star" data-value="2" aria-label="2 stars">&#9733;</button>
+              <button type="button" class="star" data-value="3" aria-label="3 stars">&#9733;</button>
+              <button type="button" class="star" data-value="4" aria-label="4 stars">&#9733;</button>
+              <button type="button" class="star" data-value="5" aria-label="5 stars">&#9733;</button>
+            </div>
+            <input type="hidden" id="foodRating" value="0">
+          </div>
+
+          <div class="form-group">
+            <label>Service</label>
+            <div class="star-row" id="serviceStarRow" role="group" aria-label="Rate the service">
+              <button type="button" class="star" data-value="1" aria-label="1 star">&#9733;</button>
+              <button type="button" class="star" data-value="2" aria-label="2 stars">&#9733;</button>
+              <button type="button" class="star" data-value="3" aria-label="3 stars">&#9733;</button>
+              <button type="button" class="star" data-value="4" aria-label="4 stars">&#9733;</button>
+              <button type="button" class="star" data-value="5" aria-label="5 stars">&#9733;</button>
+            </div>
+            <input type="hidden" id="serviceRating" value="0">
+          </div>
+
+          <div class="form-group">
+            <label>How long did you wait to be served?</label>
+            <div class="chip-group" id="waitGroup">
+              <button type="button" class="chip single" data-group="wait">Under 5 mins</button>
+              <button type="button" class="chip single" data-group="wait">5–10 mins</button>
+              <button type="button" class="chip single" data-group="wait">Over 10 mins</button>
+            </div>
+          </div>
+
+        </fieldset>
+
+        <fieldset>
+          <legend>Comments</legend>
+
+          <div class="form-group">
+            <label for="comments">Any comments or suggestions?</label>
+            <textarea id="comments" placeholder="What did you enjoy? What could we improve?"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Would you recommend the café?</label>
+            <div class="chip-group" id="recommendGroup">
+              <button type="button" class="chip single" data-group="recommend">Definitely</button>
+              <button type="button" class="chip single" data-group="recommend">Probably</button>
+              <button type="button" class="chip single" data-group="recommend">Not sure</button>
+              <button type="button" class="chip single" data-group="recommend">Probably not</button>
+            </div>
+          </div>
+
+        </fieldset>
+
+        <div id="formError" class="alert alert-error" style="display:none;"></div>
+
+        <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+          Submit feedback
+        </button>
+
+      </form>
+    </main>
+  </div>
+
+  <script type="module" src="cafe.js"></script>
+</body>
+</html>
