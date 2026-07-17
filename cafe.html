@@ -5,6 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wells Maltings — Café Feedback</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-image: url('cafe-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: rgba(101, 67, 33, 0.25);
+      z-index: 0;
+    }
+    .page-wrap {
+      position: relative;
+      z-index: 1;
+    }
+    .site-header {
+      background: rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 12px 16px;
+      backdrop-filter: blur(8px);
+      margin-bottom: 1.5rem;
+    }
+    .site-name  { color: white; }
+    .site-sub   { color: rgba(255,255,255,0.85); }
+    .logo-mark  { background: rgba(255,255,255,0.25); color: white; }
+    fieldset    { box-shadow: 0 4px 24px rgba(0,0,0,0.12); }
+    .btn-primary { background: #6F4E37; border-color: #6F4E37; }
+    .btn-primary:hover { background: #4a3424; }
+  </style>
 </head>
 <body>
 
