@@ -3,56 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wells Maltings — Event Feedback</title>
+  <title>Maltings — Event Feedback</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
   <style>
     body {
       background-image: url('events-bg.jpg');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      padding: 1.5rem 1rem;
+      padding: 1.25rem 0.75rem 3rem;
+      min-height: 100vh;
     }
     body::before {
       content: '';
       position: fixed;
       inset: 0;
-      background: rgba(255, 61, 0, 0.2);
+      background: rgba(255, 61, 0, 0.15);
       z-index: 0;
     }
     .page-wrap {
       position: relative;
       z-index: 1;
-      max-width: 640px;
+      max-width: 580px;
       margin: 0 auto;
       background: white;
       border-radius: 16px;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.22);
       overflow: hidden;
       padding: 0;
     }
     .site-header {
       background: #FF3D00;
       border-radius: 0;
-      padding: 20px 24px;
+      padding: 18px 20px;
       margin-bottom: 0;
+      gap: 10px;
     }
-    .site-name { color: white; font-size: 20px; }
-    .site-sub  { color: rgba(255,255,255,0.85); }
-    .logo-mark { background: rgba(255,255,255,0.25); color: white; }
-    main { padding: 1.5rem 1.25rem 2rem; }
-    fieldset { box-shadow: none; }
-    .btn-primary { background: #FF3D00; border-color: #FF3D00; }
+    .logo-mark {
+      background: rgba(255,255,255,0.25);
+      color: white;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 15px;
+    }
+    .site-name {
+      color: white;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 22px;
+      letter-spacing: 0.02em;
+    }
+    .site-sub { color: rgba(255,255,255,0.85); font-size: 13px; }
+    main { padding: 0 0 1.5rem; }
+
+    /* Remove fieldset styling — open layout */
+    fieldset {
+      border: none;
+      border-radius: 0;
+      background: transparent;
+      padding: 1.25rem 1.25rem 0;
+      margin-bottom: 0;
+      box-shadow: none;
+    }
+
+    /* Section headers get their own orange bar */
+    legend {
+      width: 100%;
+      background: #FF3D00;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 20px;
+      margin: 0 -1.25rem 1.25rem;
+      border-radius: 0;
+      float: none;
+    }
+    .legend-note {
+      color: rgba(255,255,255,0.8);
+      font-size: 10px;
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    /* Inputs sit directly on white, minimal border */
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    select,
+    textarea {
+      background: #fafafa;
+      border: 0.5px solid #e8e8e8;
+    }
+
+    .btn-primary { background: #FF3D00; border-color: #FF3D00; margin: 1rem 1.25rem 0; width: calc(100% - 2.5rem); }
     .btn-primary:hover { background: #CC3000; }
+    .alert { margin: 1rem 1.25rem; }
+    .notice { margin: 0 1.25rem 1rem; }
+    #formError { margin: 0.5rem 1.25rem 0; }
   </style>
 </head>
 <body>
 
   <div class="page-wrap">
     <header class="site-header">
-      <div class="logo-mark" aria-hidden="true">WM</div>
+      <div class="logo-mark" aria-hidden="true">M</div>
       <div>
-        <div class="site-name">Wells Maltings</div>
+        <div class="site-name">Maltings</div>
         <div class="site-sub">Event feedback</div>
       </div>
     </header>
@@ -149,7 +207,7 @@
           <div class="form-row two-col">
             <div class="form-group">
               <label for="postcode">Postcode</label>
-              <input type="text" id="postcode" name="postcode" placeholder="e.g. BA5 2PD" maxlength="8">
+              <input type="text" id="postcode" name="postcode" placeholder="e.g. NR23 1AB" maxlength="8">
             </div>
             <div class="form-group">
               <label for="email">Email address</label>

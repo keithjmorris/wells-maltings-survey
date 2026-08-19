@@ -3,56 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wells Maltings — Café Feedback</title>
+  <title>Maltings — Café Feedback</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
   <style>
     body {
       background-image: url('cafe-bg.jpg');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      padding: 1.5rem 1rem;
+      padding: 1.25rem 0.75rem 3rem;
+      min-height: 100vh;
     }
     body::before {
       content: '';
       position: fixed;
       inset: 0;
-      background: rgba(101, 67, 33, 0.15);
+      background: rgba(101, 67, 33, 0.12);
       z-index: 0;
     }
     .page-wrap {
       position: relative;
       z-index: 1;
-      max-width: 640px;
+      max-width: 580px;
       margin: 0 auto;
       background: white;
       border-radius: 16px;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.22);
       overflow: hidden;
       padding: 0;
     }
     .site-header {
       background: #6F4E37;
       border-radius: 0;
-      padding: 20px 24px;
+      padding: 18px 20px;
       margin-bottom: 0;
+      gap: 10px;
     }
-    .site-name { color: white; font-size: 20px; }
-    .site-sub  { color: rgba(255,255,255,0.85); }
-    .logo-mark { background: rgba(255,255,255,0.25); color: white; }
-    main { padding: 1.5rem 1.25rem 2rem; }
-    fieldset { box-shadow: none; }
-    .btn-primary { background: #6F4E37; border-color: #6F4E37; }
+    .logo-mark {
+      background: rgba(255,255,255,0.25);
+      color: white;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 15px;
+    }
+    .site-name {
+      color: white;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 22px;
+      letter-spacing: 0.02em;
+    }
+    .site-sub { color: rgba(255,255,255,0.85); font-size: 13px; }
+    main { padding: 0 0 1.5rem; }
+
+    fieldset {
+      border: none;
+      border-radius: 0;
+      background: transparent;
+      padding: 1.25rem 1.25rem 0;
+      margin-bottom: 0;
+      box-shadow: none;
+    }
+
+    legend {
+      width: 100%;
+      background: #6F4E37;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 20px;
+      margin: 0 -1.25rem 1.25rem;
+      border-radius: 0;
+      float: none;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    select,
+    textarea {
+      background: #fafafa;
+      border: 0.5px solid #e8e8e8;
+    }
+
+    .btn-primary { background: #6F4E37; border-color: #6F4E37; margin: 1rem 1.25rem 0; width: calc(100% - 2.5rem); }
     .btn-primary:hover { background: #4a3424; }
+    .alert { margin: 1rem 1.25rem; }
+    #formError { margin: 0.5rem 1.25rem 0; }
   </style>
 </head>
 <body>
 
   <div class="page-wrap">
     <header class="site-header">
-      <div class="logo-mark" aria-hidden="true">WM</div>
+      <div class="logo-mark" aria-hidden="true">M</div>
       <div>
-        <div class="site-name">Wells Maltings</div>
+        <div class="site-name">Maltings</div>
         <div class="site-sub">Café feedback</div>
       </div>
     </header>
