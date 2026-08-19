@@ -11,6 +11,7 @@
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
+      padding: 1.5rem 1rem;
     }
     body::before {
       content: '';
@@ -22,18 +23,25 @@
     .page-wrap {
       position: relative;
       z-index: 1;
+      max-width: 640px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+      overflow: hidden;
+      padding: 0;
     }
     .site-header {
-      background: rgba(255,255,255,0.15);
-      border-radius: 12px;
-      padding: 12px 16px;
-      backdrop-filter: blur(8px);
-      margin-bottom: 1.5rem;
+      background: #FF3D00;
+      border-radius: 0;
+      padding: 20px 24px;
+      margin-bottom: 0;
     }
-    .site-name  { color: white; }
-    .site-sub   { color: rgba(255,255,255,0.85); }
-    .logo-mark  { background: rgba(255,255,255,0.25); color: white; }
-    fieldset    { box-shadow: 0 4px 24px rgba(0,0,0,0.12); }
+    .site-name { color: white; font-size: 20px; }
+    .site-sub  { color: rgba(255,255,255,0.85); }
+    .logo-mark { background: rgba(255,255,255,0.25); color: white; }
+    main { padding: 1.5rem 1.25rem 2rem; }
+    fieldset { box-shadow: none; }
     .btn-primary { background: #FF3D00; border-color: #FF3D00; }
     .btn-primary:hover { background: #CC3000; }
   </style>
@@ -77,11 +85,11 @@
           <div class="form-group">
             <label>Overall rating <span class="required">*</span></label>
             <div class="star-row" id="starRow" role="group" aria-label="Rate this event from 1 to 5 stars">
-              <button type="button" class="star" data-value="1" aria-label="1 star — poor">★</button>
-              <button type="button" class="star" data-value="2" aria-label="2 stars — below average">★</button>
-              <button type="button" class="star" data-value="3" aria-label="3 stars — average">★</button>
-              <button type="button" class="star" data-value="4" aria-label="4 stars — good">★</button>
-              <button type="button" class="star" data-value="5" aria-label="5 stars — excellent">★</button>
+              <button type="button" class="star" data-value="1" aria-label="1 star — poor">&#9733;</button>
+              <button type="button" class="star" data-value="2" aria-label="2 stars — below average">&#9733;</button>
+              <button type="button" class="star" data-value="3" aria-label="3 stars — average">&#9733;</button>
+              <button type="button" class="star" data-value="4" aria-label="4 stars — good">&#9733;</button>
+              <button type="button" class="star" data-value="5" aria-label="5 stars — excellent">&#9733;</button>
             </div>
             <input type="hidden" id="rating" name="rating" value="0">
           </div>
