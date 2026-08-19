@@ -5,8 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Maltings — Event Feedback</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
   <style>
+    @font-face {
+      font-family: 'RegimeUltra';
+      src: url('regime-ultra.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
     body {
       background-image: url('events-bg.jpg');
       background-size: cover;
@@ -43,30 +48,33 @@
     .logo-mark {
       background: rgba(255,255,255,0.25);
       color: white;
-      font-family: 'Archivo Black', sans-serif;
-      font-size: 15px;
+      font-family: 'RegimeUltra', sans-serif;
+      font-size: 16px;
+      letter-spacing: 0.02em;
     }
     .site-name {
       color: white;
-      font-family: 'Archivo Black', sans-serif;
-      font-size: 22px;
-      letter-spacing: 0.02em;
+      font-family: 'RegimeUltra', sans-serif;
+      font-size: 26px;
+      letter-spacing: 0.03em;
+      line-height: 1;
     }
-    .site-sub { color: rgba(255,255,255,0.85); font-size: 13px; }
+    .site-sub { color: rgba(255,255,255,0.85); font-size: 13px; margin-top: 3px; }
     main { padding: 0 0 1.5rem; }
 
-    /* Remove fieldset styling — open layout */
+    /* Fieldsets — no border, padding only on sides and bottom */
     fieldset {
       border: none;
       border-radius: 0;
       background: transparent;
-      padding: 1.25rem 1.25rem 0;
+      padding: 0 1.25rem 0.5rem;
       margin-bottom: 0;
       box-shadow: none;
     }
 
-    /* Section headers get their own orange bar */
+    /* Section bars — full width orange strips */
     legend {
+      display: block;
       width: 100%;
       background: #FF3D00;
       color: white;
@@ -74,10 +82,10 @@
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      padding: 6px 20px;
-      margin: 0 -1.25rem 1.25rem;
+      padding: 7px 1.25rem;
+      margin: 0 0 1.25rem 0;
       border-radius: 0;
-      float: none;
+      box-sizing: border-box;
     }
     .legend-note {
       color: rgba(255,255,255,0.8);
@@ -87,20 +95,27 @@
       letter-spacing: 0;
     }
 
-    /* Inputs sit directly on white, minimal border */
+    /* Slightly darker input fields */
     input[type="text"],
     input[type="email"],
     input[type="date"],
     select,
     textarea {
-      background: #fafafa;
-      border: 0.5px solid #e8e8e8;
+      background: #efefef;
+      border: 0.5px solid #ddd;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="date"]:focus,
+    select:focus,
+    textarea:focus {
+      background: #fff;
     }
 
     .btn-primary { background: #FF3D00; border-color: #FF3D00; margin: 1rem 1.25rem 0; width: calc(100% - 2.5rem); }
     .btn-primary:hover { background: #CC3000; }
     .alert { margin: 1rem 1.25rem; }
-    .notice { margin: 0 1.25rem 1rem; }
+    .notice { margin: 1rem 1.25rem 0; }
     #formError { margin: 0.5rem 1.25rem 0; }
   </style>
 </head>
@@ -110,7 +125,7 @@
     <header class="site-header">
       <div class="logo-mark" aria-hidden="true">M</div>
       <div>
-        <div class="site-name">Maltings</div>
+        <div class="site-name">MALTINGS</div>
         <div class="site-sub">Event feedback</div>
       </div>
     </header>

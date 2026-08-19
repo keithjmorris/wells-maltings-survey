@@ -5,8 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Maltings — Café Feedback</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
   <style>
+    @font-face {
+      font-family: 'RegimeUltra';
+      src: url('regime-ultra.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
     body {
       background-image: url('cafe-bg.jpg');
       background-size: cover;
@@ -43,28 +48,30 @@
     .logo-mark {
       background: rgba(255,255,255,0.25);
       color: white;
-      font-family: 'Archivo Black', sans-serif;
-      font-size: 15px;
+      font-family: 'RegimeUltra', sans-serif;
+      font-size: 16px;
     }
     .site-name {
       color: white;
-      font-family: 'Archivo Black', sans-serif;
-      font-size: 22px;
-      letter-spacing: 0.02em;
+      font-family: 'RegimeUltra', sans-serif;
+      font-size: 26px;
+      letter-spacing: 0.03em;
+      line-height: 1;
     }
-    .site-sub { color: rgba(255,255,255,0.85); font-size: 13px; }
+    .site-sub { color: rgba(255,255,255,0.85); font-size: 13px; margin-top: 3px; }
     main { padding: 0 0 1.5rem; }
 
     fieldset {
       border: none;
       border-radius: 0;
       background: transparent;
-      padding: 1.25rem 1.25rem 0;
+      padding: 0 1.25rem 0.5rem;
       margin-bottom: 0;
       box-shadow: none;
     }
 
     legend {
+      display: block;
       width: 100%;
       background: #6F4E37;
       color: white;
@@ -72,10 +79,10 @@
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      padding: 6px 20px;
-      margin: 0 -1.25rem 1.25rem;
+      padding: 7px 1.25rem;
+      margin: 0 0 1.25rem 0;
       border-radius: 0;
-      float: none;
+      box-sizing: border-box;
     }
 
     input[type="text"],
@@ -83,8 +90,15 @@
     input[type="date"],
     select,
     textarea {
-      background: #fafafa;
-      border: 0.5px solid #e8e8e8;
+      background: #efefef;
+      border: 0.5px solid #ddd;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="date"]:focus,
+    select:focus,
+    textarea:focus {
+      background: #fff;
     }
 
     .btn-primary { background: #6F4E37; border-color: #6F4E37; margin: 1rem 1.25rem 0; width: calc(100% - 2.5rem); }
@@ -99,7 +113,7 @@
     <header class="site-header">
       <div class="logo-mark" aria-hidden="true">M</div>
       <div>
-        <div class="site-name">Maltings</div>
+        <div class="site-name">MALTINGS</div>
         <div class="site-sub">Café feedback</div>
       </div>
     </header>
