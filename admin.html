@@ -3,8 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wells Maltings — Admin</title>
+  <title>Maltings — Admin</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .manage-events {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .manage-events h3 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .add-event-row {
+      display: grid;
+      grid-template-columns: 1fr 160px auto;
+      gap: 8px;
+      margin-bottom: 1rem;
+    }
+    @media (max-width: 500px) {
+      .add-event-row { grid-template-columns: 1fr; }
+    }
+    .event-list-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 12px;
+      background: var(--color-background-secondary);
+      border-radius: var(--radius);
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+    .event-list-item .event-date {
+      font-size: 12px;
+      color: var(--color-text-secondary);
+      margin-left: 8px;
+    }
+    .event-list-empty {
+      font-size: 13px;
+      color: var(--color-text-tertiary);
+      padding: 8px 0;
+    }
+    .btn-danger {
+      background: none;
+      border: none;
+      color: #A32D2D;
+      font-size: 13px;
+      cursor: pointer;
+      padding: 2px 6px;
+    }
+    .btn-danger:hover { text-decoration: underline; }
+  </style>
 </head>
 <body>
 
@@ -13,7 +68,7 @@
     <div class="login-card">
       <div class="logo-mark" aria-hidden="true">WM</div>
       <h1 class="login-title">Admin area</h1>
-      <p class="login-sub">Wells Maltings survey dashboard</p>
+      <p class="login-sub">Maltings survey dashboard</p>
 
       <div id="loginError" class="alert alert-error" style="display:none;"></div>
 
@@ -51,7 +106,18 @@
         <button class="admin-tab" id="tabCafe">&#x2615; Café</button>
       </div>
 
-      <!-- Stat cards (shared, relabelled per tab) -->
+      <!-- Manage events panel — only shown on Events tab -->
+      <div class="manage-events" id="manageEvents">
+        <h3>&#x1F4C5; Manage events</h3>
+        <div class="add-event-row">
+          <input type="text" id="newEventLabel" placeholder="Event name (include date if multi-showing, e.g. Hamlet — 15 Aug)">
+          <input type="date" id="newEventDate" title="Date for auto-fill on survey form">
+          <button class="btn btn-primary" id="addEventBtn">Add</button>
+        </div>
+        <div id="eventListAdmin"><div class="event-list-empty">No events yet — add one above.</div></div>
+      </div>
+
+      <!-- Stat cards -->
       <div class="stat-row">
         <div class="stat-card"><div class="stat-label">Responses</div><div class="stat-val" id="statTotal">—</div></div>
         <div class="stat-card"><div class="stat-label">Avg rating</div><div class="stat-val" id="statAvg">—</div></div>
@@ -61,8 +127,6 @@
 
       <!-- Toolbar -->
       <div class="admin-toolbar">
-
-        <!-- Event filters -->
         <div class="filter-row" id="eventFilters">
           <input type="text" id="filterEvent" placeholder="Filter by event name…">
           <select id="filterRating">
@@ -74,8 +138,6 @@
             <option value="1">1 star</option>
           </select>
         </div>
-
-        <!-- Café filters -->
         <div class="filter-row" id="cafeFilters" style="display:none;">
           <input type="date" id="filterCafeDate">
           <select id="filterTimeOfDay">
@@ -86,7 +148,6 @@
             <option>Evening</option>
           </select>
         </div>
-
         <button class="btn btn-outline" id="csvBtn">&#8595; Download CSV</button>
       </div>
 
