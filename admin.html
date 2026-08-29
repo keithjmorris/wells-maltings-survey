@@ -69,9 +69,7 @@
       <div class="logo-mark" aria-hidden="true">WM</div>
       <h1 class="login-title">Admin area</h1>
       <p class="login-sub">Maltings survey dashboard</p>
-
       <div id="loginError" class="alert alert-error" style="display:none;"></div>
-
       <div class="form-group">
         <label for="loginEmail">Email</label>
         <input type="email" id="loginEmail" autocomplete="username">
@@ -100,10 +98,11 @@
 
     <div class="admin-wrap">
 
-      <!-- Tab bar -->
+      <!-- Tab bar — three tabs -->
       <div class="admin-tabs">
         <button class="admin-tab tab-active" id="tabEvents">&#x1F3AD; Events</button>
         <button class="admin-tab" id="tabCafe">&#x2615; Café</button>
+        <button class="admin-tab" id="tabAudience">&#x1F4CB; Audience survey</button>
       </div>
 
       <!-- Manage events panel — only shown on Events tab -->
@@ -120,13 +119,14 @@
       <!-- Stat cards -->
       <div class="stat-row">
         <div class="stat-card"><div class="stat-label">Responses</div><div class="stat-val" id="statTotal">—</div></div>
-        <div class="stat-card"><div class="stat-label">Avg rating</div><div class="stat-val" id="statAvg">—</div></div>
+        <div class="stat-card"><div class="stat-label" id="statLabel2">Avg rating</div><div class="stat-val" id="statAvg">—</div></div>
         <div class="stat-card"><div class="stat-label" id="statLabel3">Events covered</div><div class="stat-val" id="statEvents">—</div></div>
         <div class="stat-card"><div class="stat-label" id="statLabel4">Emails collected</div><div class="stat-val" id="statEmails">—</div></div>
       </div>
 
       <!-- Toolbar -->
       <div class="admin-toolbar">
+        <!-- Event filters -->
         <div class="filter-row" id="eventFilters">
           <input type="text" id="filterEvent" placeholder="Filter by event name…">
           <select id="filterRating">
@@ -138,6 +138,7 @@
             <option value="1">1 star</option>
           </select>
         </div>
+        <!-- Café filters -->
         <div class="filter-row" id="cafeFilters" style="display:none;">
           <input type="date" id="filterCafeDate">
           <select id="filterTimeOfDay">
@@ -146,6 +147,30 @@
             <option>Lunchtime</option>
             <option>Afternoon</option>
             <option>Evening</option>
+          </select>
+        </div>
+        <!-- Audience survey filters -->
+        <div class="filter-row" id="audienceFilters" style="display:none;">
+          <select id="filterEventType">
+            <option value="">All event types</option>
+            <option>Live classical music</option>
+            <option>Live contemporary / popular music</option>
+            <option>Live theatre</option>
+            <option>Talk, lecture or discussion</option>
+            <option>Theatre on screen</option>
+            <option>Exhibition — visual arts</option>
+            <option>Exhibition — crafts</option>
+            <option>Dance performance</option>
+            <option>Community event</option>
+            <option>Hollywood / mainstream film</option>
+            <option>Independent or foreign language film</option>
+          </select>
+          <select id="filterAudienceRating">
+            <option value="">All overall ratings</option>
+            <option value="4">4 — Excellent</option>
+            <option value="3">3 — More than adequate</option>
+            <option value="2">2 — OK</option>
+            <option value="1">1 — Not good</option>
           </select>
         </div>
         <button class="btn btn-outline" id="csvBtn">&#8595; Download CSV</button>
